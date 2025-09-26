@@ -1,0 +1,821 @@
+<?xml version="1.0" ?>
+<robot name="armbasicmk2_rf" xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+<!-- <xacro:include filename="$(find armbasicmk2_rf_description)/urdf/materials.xacro" /> -->
+<xacro:include filename="$(find armbasicmk2_rf_description)/urdf/armbasicmk2_rf.trans" />
+<xacro:include filename="$(find armbasicmk2_rf_description)/urdf/armbasicmk2_rf.gazebo" />
+<link name="base_link">
+  <inertial>
+    <origin xyz="6.800860772596329e-14 3.691305239142602e-18 0.007330088098766174" rpy="0 0 0"/>
+    <mass value="0.10740993249483455"/>
+    <inertia ixx="3.3e-05" iyy="4.4e-05" izz="7.3e-05" ixy="0.0" iyz="-0.0" ixz="-0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find armbasicmk2_rf_description)/meshes/base_link.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find armbasicmk2_rf_description)/meshes/base_link.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="motorattachment_rf_1">
+  <inertial>
+    <origin xyz="0.02927037371339208 1.1714766693985926e-06 0.010542658979876152" rpy="0 0 0"/>
+    <mass value="0.2298484861301906"/>
+    <inertia ixx="0.000186" iyy="0.0003" izz="0.000454" ixy="-0.0" iyz="-0.0" ixz="-3e-05"/>
+  </inertial>
+  <visual>
+    <origin xyz="0.0 0.0 -0.027" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find armbasicmk2_rf_description)/meshes/motorattachment_rf_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="0.0 0.0 -0.027" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find armbasicmk2_rf_description)/meshes/motorattachment_rf_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="sholder_motor_1">
+  <inertial>
+    <origin xyz="-0.026999999999992655 0.0017467971715640883 0.017998909469088657" rpy="0 0 0"/>
+    <mass value="0.899469772806751"/>
+    <inertia ixx="0.001425" iyy="0.0004" izz="0.001422" ixy="0.0" iyz="-0.0" ixz="0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.085 0.003 -0.052" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find armbasicmk2_rf_description)/meshes/sholder_motor_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="black"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.085 0.003 -0.052" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find armbasicmk2_rf_description)/meshes/sholder_motor_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="cfrp_arm_under_1">
+  <inertial>
+    <origin xyz="-0.275257878200658 -0.06599999999999988 0.028271716393075658" rpy="0 0 0"/>
+    <mass value="0.8180160660555457"/>
+    <inertia ixx="0.004845" iyy="0.021811" izz="0.025227" ixy="-0.0" iyz="0.0" ixz="0.003056"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.058 -0.066 -0.07" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find armbasicmk2_rf_description)/meshes/cfrp_arm_under_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="black"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.058 -0.066 -0.07" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find armbasicmk2_rf_description)/meshes/cfrp_arm_under_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="armspacer3mm_1">
+  <inertial>
+    <origin xyz="0.005836245443908823 -0.06599999999999992 -0.02377415438949776" rpy="0 0 0"/>
+    <mass value="0.1425135830976817"/>
+    <inertia ixx="0.000291" iyy="0.000297" izz="0.000517" ixy="-0.0" iyz="0.0" ixz="1.6e-05"/>
+  </inertial>
+  <visual>
+    <origin xyz="0.057 -0.066 -0.089" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find armbasicmk2_rf_description)/meshes/armspacer3mm_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="black"/>
+  </visual>
+  <collision>
+    <origin xyz="0.057 -0.066 -0.089" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find armbasicmk2_rf_description)/meshes/armspacer3mm_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="uchan_fix_1">
+  <inertial>
+    <origin xyz="2.0816681711721685e-17 -0.076 -0.018999999517699942" rpy="0 0 0"/>
+    <mass value="0.07219571900435875"/>
+    <inertia ixx="0.00039" iyy="0.000102" izz="0.000414" ixy="-0.0" iyz="0.0" ixz="-0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="0.057 -0.076 -0.089" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find armbasicmk2_rf_description)/meshes/uchan_fix_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="0.057 -0.076 -0.089" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find armbasicmk2_rf_description)/meshes/uchan_fix_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="elbow_motor_1">
+  <inertial>
+    <origin xyz="-1.2113498281673962e-06 -0.06173962440022222 4.82289042036399e-10" rpy="0 0 0"/>
+    <mass value="0.8101156094698616"/>
+    <inertia ixx="0.001155" iyy="0.000374" izz="0.001158" ixy="0.0" iyz="-0.0" ixz="-0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="0.492 -0.066 -0.125" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find armbasicmk2_rf_description)/meshes/elbow_motor_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="black"/>
+  </visual>
+  <collision>
+    <origin xyz="0.492 -0.066 -0.125" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find armbasicmk2_rf_description)/meshes/elbow_motor_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="elbowmotorholder_1">
+  <inertial>
+    <origin xyz="0.01815412851963899 -0.032114384147279615 -0.026999999517700435" rpy="0 0 0"/>
+    <mass value="0.11143415660851923"/>
+    <inertia ixx="0.000119" iyy="7.7e-05" izz="7.1e-05" ixy="1e-06" iyz="0.0" ixz="0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="0.474 -0.033 -0.152" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find armbasicmk2_rf_description)/meshes/elbowmotorholder_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="0.474 -0.033 -0.152" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find armbasicmk2_rf_description)/meshes/elbowmotorholder_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="cfrppipe_1">
+  <inertial>
+    <origin xyz="0.23417559003974206 -0.017999999999999943 -0.029999999517700104" rpy="0 0 0"/>
+    <mass value="0.4243002102107201"/>
+    <inertia ixx="0.000554" iyy="0.00832" izz="0.008316" ixy="-0.0" iyz="0.0" ixz="-0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="0.455 -0.018 -0.155" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find armbasicmk2_rf_description)/meshes/cfrppipe_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="black"/>
+  </visual>
+  <collision>
+    <origin xyz="0.455 -0.018 -0.155" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find armbasicmk2_rf_description)/meshes/cfrppipe_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="wrist_holder_1">
+  <inertial>
+    <origin xyz="0.00538687441616373 -0.017999999503902145 -0.030047351829839225" rpy="0 0 0"/>
+    <mass value="0.0511359133055125"/>
+    <inertia ixx="4.1e-05" iyy="2.1e-05" izz="2.1e-05" ixy="0.0" iyz="0.0" ixz="0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.014 -0.018 -0.155" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find armbasicmk2_rf_description)/meshes/wrist_holder_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.014 -0.018 -0.155" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find armbasicmk2_rf_description)/meshes/wrist_holder_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="innermotorspacer_1">
+  <inertial>
+    <origin xyz="-0.04607415020429145 0.029999999999997407 0.3140000004823033" rpy="0 0 0"/>
+    <mass value="0.03944281423422913"/>
+    <inertia ixx="4.3e-05" iyy="5.8e-05" izz="5.8e-05" ixy="0.0" iyz="0.0" ixz="0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="0.318 0.03 0.189" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find armbasicmk2_rf_description)/meshes/innermotorspacer_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="0.318 0.03 0.189" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find armbasicmk2_rf_description)/meshes/innermotorspacer_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="h54p_100_s500_r_dummy_1">
+  <inertial>
+    <origin xyz="-0.047039423233420585 0.02700000000000065 -0.018001318290201032" rpy="0 0 0"/>
+    <mass value="0.7397940369372734"/>
+    <inertia ixx="0.000324" iyy="0.000852" izz="0.00085" ixy="-0.0" iyz="0.0" ixz="-0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="0.314 0.027 -0.143" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find armbasicmk2_rf_description)/meshes/h54p_100_s500_r_dummy_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="black"/>
+  </visual>
+  <collision>
+    <origin xyz="0.314 0.027 -0.143" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find armbasicmk2_rf_description)/meshes/h54p_100_s500_r_dummy_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="frange22_1">
+  <inertial>
+    <origin xyz="0.011970687825565818 1.0297993518602601e-13 4.823073052051541e-10" rpy="0 0 0"/>
+    <mass value="0.030632417720102344"/>
+    <inertia ixx="5e-06" iyy="6e-06" izz="6e-06" ixy="0.0" iyz="0.0" ixz="0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="0.305 -0.0 -0.125" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find armbasicmk2_rf_description)/meshes/frange22_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="0.305 -0.0 -0.125" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find armbasicmk2_rf_description)/meshes/frange22_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="cfrp_rotationver2525_1">
+  <inertial>
+    <origin xyz="0.13850000000000368 5.332715840388885e-16 -0.010999999517700282" rpy="0 0 0"/>
+    <mass value="0.059325050880486084"/>
+    <inertia ixx="1.1e-05" iyy="0.000434" izz="0.000434" ixy="-0.0" iyz="0.0" ixz="0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="0.282 -0.0 -0.136" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find armbasicmk2_rf_description)/meshes/cfrp_rotationver2525_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="0.282 -0.0 -0.136" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find armbasicmk2_rf_description)/meshes/cfrp_rotationver2525_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="tekubi_frange_22_1">
+  <inertial>
+    <origin xyz="0.017980403427289637 -2.401568404629577e-14 -0.01099999951769931" rpy="0 0 0"/>
+    <mass value="0.05150765519894518"/>
+    <inertia ixx="1e-05" iyy="1.2e-05" izz="1.3e-05" ixy="0.0" iyz="-0.0" ixz="0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="0.005 -0.0 -0.136" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find armbasicmk2_rf_description)/meshes/tekubi_frange_22_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="0.005 -0.0 -0.136" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find armbasicmk2_rf_description)/meshes/tekubi_frange_22_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="wrist2_motor_1">
+  <inertial>
+    <origin xyz="0.02553340999872098 -0.002308300673938236 -1.198818277980962e-08" rpy="0 0 0"/>
+    <mass value="0.38815688084314187"/>
+    <inertia ixx="0.000286" iyy="0.00012" izz="0.000292" ixy="-4e-06" iyz="-0.0" ixz="0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.031 -0.0 -0.125" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find armbasicmk2_rf_description)/meshes/wrist2_motor_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="black"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.031 -0.0 -0.125" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find armbasicmk2_rf_description)/meshes/wrist2_motor_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="frp42_h02_1">
+  <inertial>
+    <origin xyz="0.01632608019843374 -0.044792311757179015 4.764381666966244e-10" rpy="0 0 0"/>
+    <mass value="0.027142982651033515"/>
+    <inertia ixx="6.2e-05" iyy="9e-06" izz="6.4e-05" ixy="-1e-06" iyz="0.0" ixz="0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.058 -0.045 -0.125" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find armbasicmk2_rf_description)/meshes/frp42_h02_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="black"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.058 -0.045 -0.125" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find armbasicmk2_rf_description)/meshes/frp42_h02_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="hand_base_link_1">
+  <inertial>
+    <origin xyz="0.0036106433250461117 -0.04499999999991971 3.7601766145201054e-10" rpy="0 0 0"/>
+    <mass value="0.077839787821002"/>
+    <inertia ixx="8.6e-05" iyy="2.2e-05" izz="7e-05" ixy="-0.0" iyz="0.0" ixz="-0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.094 -0.045 -0.125" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find armbasicmk2_rf_description)/meshes/hand_base_link_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.094 -0.045 -0.125" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find armbasicmk2_rf_description)/meshes/hand_base_link_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="rf67f_outer_1">
+  <inertial>
+    <origin xyz="-1.0077634243141633e-15 -9.844948834505567e-18 0.0034161279081124495" rpy="0 0 0"/>
+    <mass value="0.1131127772767721"/>
+    <inertia ixx="9e-05" iyy="9e-05" izz="0.000178" ixy="0.0" iyz="0.0" ixz="-0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="0.0 -0.0 -0.014" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find armbasicmk2_rf_description)/meshes/rf67f_outer_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="grey"/>
+  </visual>
+  <collision>
+    <origin xyz="0.0 -0.0 -0.014" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find armbasicmk2_rf_description)/meshes/rf67f_outer_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="rf67f_inner_1">
+  <inertial>
+    <origin xyz="-1.4410006952401435e-15 -6.314291484426093e-17 0.004082844222894467" rpy="0 0 0"/>
+    <mass value="0.07950194317963732"/>
+    <inertia ixx="3.4e-05" iyy="3.4e-05" izz="6.7e-05" ixy="0.0" iyz="-0.0" ixz="-0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.0 -0.0 -0.014" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find armbasicmk2_rf_description)/meshes/rf67f_inner_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="grey"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.0 -0.0 -0.014" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find armbasicmk2_rf_description)/meshes/rf67f_inner_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="base_gear_1">
+  <inertial>
+    <origin xyz="-2.8478488522626362e-15 1.488595974649606e-17 0.005053416523161779" rpy="0 0 0"/>
+    <mass value="0.054392339435549844"/>
+    <inertia ixx="5.4e-05" iyy="5.4e-05" izz="0.000108" ixy="-0.0" iyz="-0.0" ixz="0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="0.0 -0.0 -0.017" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find armbasicmk2_rf_description)/meshes/base_gear_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="blue"/>
+  </visual>
+  <collision>
+    <origin xyz="0.0 -0.0 -0.017" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find armbasicmk2_rf_description)/meshes/base_gear_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="h54p_200_s500_r_dummy_1">
+  <inertial>
+    <origin xyz="-1.1228510418404003e-06 6.282882880593122e-17 -0.0650801142077765" rpy="0 0 0"/>
+    <mass value="0.8550089028499639"/>
+    <inertia ixx="0.001272" iyy="0.001275" izz="0.000376" ixy="-0.0" iyz="0.0" ixz="-0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="0.0765 -0.0 -0.017" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find armbasicmk2_rf_description)/meshes/h54p_200_s500_r_dummy_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="black"/>
+  </visual>
+  <collision>
+    <origin xyz="0.0765 -0.0 -0.017" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find armbasicmk2_rf_description)/meshes/h54p_200_s500_r_dummy_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="motorgear_1.5_48_1">
+  <inertial>
+    <origin xyz="-0.07649999999999393 6.2920573078456705e-18 0.0072961541095629846" rpy="0 0 0"/>
+    <mass value="0.01764917143275983"/>
+    <inertia ixx="4e-06" iyy="4e-06" izz="8e-06" ixy="0.0" iyz="-0.0" ixz="0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.0 -0.0 -0.014" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find armbasicmk2_rf_description)/meshes/motorgear_1.5_48_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="blue"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.0 -0.0 -0.014" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find armbasicmk2_rf_description)/meshes/motorgear_1.5_48_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="armcover_1">
+  <inertial>
+    <origin xyz="-0.2666814516172862 0.07599999990589017 0.02900816674241878" rpy="0 0 0"/>
+    <mass value="0.22405271694333478"/>
+    <inertia ixx="0.001902" iyy="0.00575" izz="0.007229" ixy="-0.0" iyz="-0.0" ixz="0.000771"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.058 0.076 -0.07" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find armbasicmk2_rf_description)/meshes/armcover_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="black"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.058 0.076 -0.07" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find armbasicmk2_rf_description)/meshes/armcover_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="arm_cover2_1">
+  <inertial>
+    <origin xyz="0.21346071846015077 -0.017999999999980643 0.008368812565760275" rpy="0 0 0"/>
+    <mass value="0.1460650540282831"/>
+    <inertia ixx="6.5e-05" iyy="0.002275" izz="0.002328" ixy="0.0" iyz="-0.0" ixz="1.1e-05"/>
+  </inertial>
+  <visual>
+    <origin xyz="0.455 -0.018 -0.1575" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find armbasicmk2_rf_description)/meshes/arm_cover2_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="black"/>
+  </visual>
+  <collision>
+    <origin xyz="0.455 -0.018 -0.1575" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find armbasicmk2_rf_description)/meshes/arm_cover2_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="elbow_cover_camera_1">
+  <inertial>
+    <origin xyz="-0.021334728698876648 -0.026944761600866025 0.04254785042733461" rpy="0 0 0"/>
+    <mass value="0.13477384533898337"/>
+    <inertia ixx="0.000318" iyy="0.000221" izz="0.000169" ixy="3e-06" iyz="2.4e-05" ixz="8e-06"/>
+  </inertial>
+  <visual>
+    <origin xyz="0.474 -0.033 -0.156" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find armbasicmk2_rf_description)/meshes/elbow_cover_camera_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="black"/>
+  </visual>
+  <collision>
+    <origin xyz="0.474 -0.033 -0.156" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find armbasicmk2_rf_description)/meshes/elbow_cover_camera_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="camera_elbow_link_1">
+  <inertial>
+    <origin xyz="-0.005691855026626502 0.00030614832180345537 0.000504853995332899" rpy="0 0 0"/>
+    <mass value="0.16222955272682651"/>
+    <inertia ixx="3.4e-05" iyy="3e-05" izz="3.2e-05" ixy="2e-06" iyz="0.0" ixz="1e-06"/>
+  </inertial>
+  <visual>
+    <origin xyz="0.482 -0.0 -0.242" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find armbasicmk2_rf_description)/meshes/camera_elbow_link_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="0.482 -0.0 -0.242" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find armbasicmk2_rf_description)/meshes/camera_elbow_link_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="mid360_plate_1">
+  <inertial>
+    <origin xyz="0.017354318881491443 0.0025187745643894402 -0.027340671376016742" rpy="0 0 0"/>
+    <mass value="0.025677154614472585"/>
+    <inertia ixx="1.2e-05" iyy="1.1e-05" izz="1.4e-05" ixy="0.0" iyz="-0.0" ixz="5e-06"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.089 0.003 -0.052" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find armbasicmk2_rf_description)/meshes/mid360_plate_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.089 0.003 -0.052" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find armbasicmk2_rf_description)/meshes/mid360_plate_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="front_lidar_1">
+  <inertial>
+    <origin xyz="-0.004726325044073165 0.0237998672835044 0.027800261427818065" rpy="0 0 0"/>
+    <mass value="1.079408458706307"/>
+    <inertia ixx="0.000548" iyy="0.000509" izz="0.000545" ixy="0.0" iyz="0.0" ixz="-2e-06"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.135167 0.024 -0.0055" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find armbasicmk2_rf_description)/meshes/front_lidar_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.135167 0.024 -0.0055" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find armbasicmk2_rf_description)/meshes/front_lidar_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="lidar_guard">
+  <inertial>
+    <origin xyz="0.017169099723025508 0.0029686100141086778 -0.014461657623726268" rpy="0 0 0"/>
+    <mass value="0.20340991567725594"/>
+    <inertia ixx="5.5e-05" iyy="6.5e-05" izz="9.8e-05" ixy="-0.0" iyz="0.0" ixz="-3e-06"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.085 0.003 -0.088" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://armbasicmk2_rf_description/meshes/lidar_guard.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.085 0.003 -0.088" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://armbasicmk2_rf_description/meshes/lidar_guard.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<joint name="motorattachment_gear" type="fixed">
+  <origin xyz="0.0 -0.0 0.01" rpy="0 0 0"/>
+  <parent link="base_gear_1"/>
+  <child link="motorattachment_rf_1"/>
+</joint>
+
+<joint name="motorattachment_motor" type="fixed">
+  <origin xyz="0.085 -0.003 0.025" rpy="0 0 0"/>
+  <parent link="motorattachment_rf_1"/>
+  <child link="sholder_motor_1"/>
+</joint>
+
+<joint name="sholder_joint" type="revolute">
+  <origin xyz="-0.027 0.069 0.018" rpy="0 0 0"/>
+  <parent link="sholder_motor_1"/>
+  <child link="cfrp_arm_under_1"/>
+  <axis xyz="0.0 1.0 0.0"/>
+  <limit upper="3.141593" lower="0.0" effort="100" velocity="100"/>
+</joint>
+
+<joint name="armspacer_arm" type="fixed">
+  <origin xyz="-0.115 0.0 0.019" rpy="0 0 0"/>
+  <parent link="cfrp_arm_under_1"/>
+  <child link="armspacer3mm_1"/>
+</joint>
+
+<joint name="uchan1" type="fixed">
+  <origin xyz="-0.115 0.01 0.019" rpy="0 0 0"/>
+  <parent link="cfrp_arm_under_1"/>
+  <child link="uchan_fix_1"/>
+</joint>
+
+<joint name="elbow_joint" type="revolute">
+  <origin xyz="-0.55 0.0 0.055" rpy="0 0 0"/>
+  <parent link="cfrp_arm_under_1"/>
+  <child link="elbow_motor_1"/>
+  <axis xyz="-0.0 -1.0 -0.0"/>
+  <limit upper="3.141593" lower="0.0" effort="100" velocity="100"/>
+</joint>
+
+<joint name="armholder_elbowmotor" type="fixed">
+  <origin xyz="0.018 -0.033 0.027" rpy="0 0 0"/>
+  <parent link="elbow_motor_1"/>
+  <child link="elbowmotorholder_1"/>
+</joint>
+
+<joint name="armholder_cfrparm" type="fixed">
+  <origin xyz="0.019 -0.015 0.003" rpy="0 0 0"/>
+  <parent link="elbowmotorholder_1"/>
+  <child link="cfrppipe_1"/>
+</joint>
+
+<joint name="cfrparm_wrist" type="fixed">
+  <origin xyz="0.469 0.0 0.0" rpy="0 0 0"/>
+  <parent link="cfrppipe_1"/>
+  <child link="wrist_holder_1"/>
+</joint>
+
+<joint name="cfrparm_motorspacer" type="fixed">
+  <origin xyz="0.137 -0.048 -0.344" rpy="0 0 0"/>
+  <parent link="cfrppipe_1"/>
+  <child link="innermotorspacer_1"/>
+</joint>
+
+<joint name="motorspacer_wristmotor" type="fixed">
+  <origin xyz="0.004 0.003 0.332" rpy="0 0 0"/>
+  <parent link="innermotorspacer_1"/>
+  <child link="h54p_100_s500_r_dummy_1"/>
+</joint>
+
+<joint name="wrist_joint" type="revolute">
+  <origin xyz="0.009 0.027 -0.018" rpy="0 0 0"/>
+  <parent link="h54p_100_s500_r_dummy_1"/>
+  <child link="frange22_1"/>
+  <axis xyz="1.0 0.0 -0.0"/>
+  <limit upper="3.141593" lower="-3.141593" effort="100" velocity="100"/>
+</joint>
+
+<joint name="wristmotorfrange_cfrppipe" type="fixed">
+  <origin xyz="0.023 0.0 0.011" rpy="0 0 0"/>
+  <parent link="frange22_1"/>
+  <child link="cfrp_rotationver2525_1"/>
+</joint>
+
+<joint name="cfrppipe_wristfrange" type="fixed">
+  <origin xyz="0.277 0.0 0.0" rpy="0 0 0"/>
+  <parent link="cfrp_rotationver2525_1"/>
+  <child link="tekubi_frange_22_1"/>
+</joint>
+
+<joint name="motorholder_wristfrange" type="fixed">
+  <origin xyz="0.036 0.0 -0.011" rpy="0 0 0"/>
+  <parent link="tekubi_frange_22_1"/>
+  <child link="wrist2_motor_1"/>
+</joint>
+
+<joint name="wrist_joint2" type="revolute">
+  <origin xyz="0.027 0.045 0.0" rpy="0 0 0"/>
+  <parent link="wrist2_motor_1"/>
+  <child link="frp42_h02_1"/>
+  <axis xyz="-0.0 1.0 -0.0"/>
+  <limit upper="1.570796" lower="-1.570796" effort="100" velocity="100"/>
+</joint>
+
+<joint name="wrist2_hand" type="fixed">
+  <origin xyz="0.036 0.0 0.0" rpy="0 0 0"/>
+  <parent link="frp42_h02_1"/>
+  <child link="hand_base_link_1"/>
+</joint>
+
+<joint name="base_joint" type="continuous">
+  <origin xyz="-0.0 0.0 0.0" rpy="0 0 0"/>
+  <parent link="rf67f_inner_1"/>
+  <child link="rf67f_outer_1"/>
+  <axis xyz="0.0 -0.0 1.0"/>
+</joint>
+
+<joint name="ring_base" type="fixed">
+  <origin xyz="0.0 0.0 0.014" rpy="0 0 0"/>
+  <parent link="base_link"/>
+  <child link="rf67f_inner_1"/>
+</joint>
+
+<joint name="ring_gear" type="fixed">
+  <origin xyz="0.0 0.0 0.003" rpy="0 0 0"/>
+  <parent link="rf67f_outer_1"/>
+  <child link="base_gear_1"/>
+</joint>
+
+<joint name="motorgear_motor" type="fixed">
+  <origin xyz="-0.0765 0.0 0.003" rpy="0 0 0"/>
+  <parent link="motorgear_1.5_48_1"/>
+  <child link="h54p_200_s500_r_dummy_1"/>
+</joint>
+
+<joint name="b_gear_s_gear" type="fixed">
+  <origin xyz="0.0 0.0 0.014" rpy="0 0 0"/>
+  <parent link="base_link"/>
+  <child link="motorgear_1.5_48_1"/>
+</joint>
+
+<joint name="cover1" type="fixed">
+  <origin xyz="0.0 -0.142 0.0" rpy="0 0 0"/>
+  <parent link="cfrp_arm_under_1"/>
+  <child link="armcover_1"/>
+</joint>
+
+<joint name="cover2" type="fixed">
+  <origin xyz="0.0 0.0 0.0025" rpy="0 0 0"/>
+  <parent link="cfrppipe_1"/>
+  <child link="arm_cover2_1"/>
+</joint>
+
+<joint name="cover_elbow" type="fixed">
+  <origin xyz="0.0 0.0 0.004" rpy="0 0 0"/>
+  <parent link="elbowmotorholder_1"/>
+  <child link="elbow_cover_camera_1"/>
+</joint>
+
+<joint name="elbow_camera" type="fixed">
+  <origin xyz="-0.008 -0.033 0.086" rpy="0 0 0"/>
+  <parent link="elbow_cover_camera_1"/>
+  <child link="camera_elbow_link_1"/>
+</joint>
+
+<joint name="lidar_plate" type="fixed">
+  <origin xyz="0.089 -0.003 0.025" rpy="0 0 0"/>
+  <parent link="motorattachment_rf_1"/>
+  <child link="mid360_plate_1"/>
+</joint>
+
+<joint name="lidar" type="fixed">
+  <origin xyz="0.046167 -0.021 -0.0465" rpy="0 0 0"/>
+  <parent link="mid360_plate_1"/>
+  <child link="front_lidar_1"/>
+</joint>
+
+<joint name="lidar_guard" type="fixed">
+  <origin xyz="0.0 0.0 0.036" rpy="0 0 0"/>
+  <parent link="sholder_motor_1"/>
+  <child link="lidar_guard"/>
+</joint>
+
+
+</robot>
