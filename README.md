@@ -1,1 +1,5 @@
 # armbasicmk2_rf_description
+
+urdfは本体urdfと統合するためにmaterialをコメントアウトしている。
+
+もしdisplayで単体で表示したければ別途urdfをコピーしてコメントアウト解除を。
